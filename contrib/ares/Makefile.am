@@ -1,7 +1,7 @@
 # $Id: $
 AUTOMAKE_OPTIONS = foreign
-
-CFLAGS=@CFLAGS@ ${WARN_CFLAGS} ${ERROR_CFLAGS}
+AM_CFLAGS = -arch x86_64 -arch arm64
+CFLAGS=@CFLAGS@ ${WARN_CFLAGS} ${ERROR_CFLAGS} 
 
 ALL_CFLAGS=${CPPFLAGS} ${CFLAGS} ${DEFS}
 
@@ -29,6 +29,7 @@ man3_MANS = \
 	ares_mkquery.3          ares_query.3          ares_timeout.3 \
 	ares_free_errmem.3      ares_gethostbyname.3  ares_parse_a_reply.3  \
 	ares_search.3
+
 
 EXTRA_DIST = $(man3_MANS) adig.c ahost.c ares.vcproj ares_7_1.vcproj
 
